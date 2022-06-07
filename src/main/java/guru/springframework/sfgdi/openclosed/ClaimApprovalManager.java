@@ -1,4 +1,4 @@
-package guru.springframework.blog.openclosedprinciple;
+package guru.springframework.sfgdi.openclosed;
 public class ClaimApprovalManager {
     public void processClaim(InsuranceSurveyor surveyor){
         if(surveyor.isValidClaim()){

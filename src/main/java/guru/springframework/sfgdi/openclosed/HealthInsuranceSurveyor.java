@@ -1,5 +1,5 @@
-package guru.springframework.blog.openclosedprinciple;
-public class HealthInsuranceSurveyor{
+package guru.springframework.sfgdi.openclosed;
+public class HealthInsuranceSurveyor extends InsuranceSurveyor {
     public boolean isValidClaim(){
         System.out.println("HealthInsuranceSurveyor: Validating health insurance claim...");
         /*Logic to validate health insurance claims*/
