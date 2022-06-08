@@ -20,5 +20,5 @@ class ClaimApprovalManagerTest {
  
       claim2.processClaim(vehicleInsuranceSurveyor);
     }
-    }
+
 }
