@@ -1,17 +1,26 @@
 package guru.springframework.sfgdi.config;
 
+import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 
+@PropertySource("classpath:datasource.properties")
 @Configuration
 public class GreetingsServiceConfig {
 
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${guru.username}") String userName,@Value("${guru.password}") String password,@Value("${guru.jdbcurl}") String jdbcurl)
+    {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setJdbcurl(jdbcurl);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setUserName(userName);
+        return fakeDataSource;
+    }
     @Bean
     EnglishGreetingRepository englishGreetingRepository()
     {
