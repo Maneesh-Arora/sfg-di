@@ -1,0 +1,4 @@
+guru:
+  username: qa_YMLUsername
+  password: qa_yml_dbpassword
+  jdbcurl: qa_ymlsomeUrlforDB
